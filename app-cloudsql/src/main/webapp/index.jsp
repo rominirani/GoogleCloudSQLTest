@@ -26,9 +26,9 @@
       <%
       Connection conn = null;
       try {
-           String CLOUDSQL_IP     = System.getProperty("CLOUDSQL_IP");
-           String CLOUDSQL_USERID = System.getProperty("CLOUDSQL_USERID");
-           String CLOUDSQL_PWD    = System.getProperty("CLOUDSQL_PWD");
+           String CLOUDSQL_IP     = System.getenv("CLOUDSQL_IP");
+           String CLOUDSQL_USERID = System.getenv("CLOUDSQL_USERID");
+           String CLOUDSQL_PWD    = System.getenv("CLOUDSQL_PWD");
            conn = DriverManager.getConnection("jdbc:mysql://" + CLOUDSQL_IP + "/guestbook",CLOUDSQL_USERID, CLOUDSQL_PWD);
           ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM entries");
           while (rs.next()) {
