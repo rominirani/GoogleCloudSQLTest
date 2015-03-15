@@ -1,0 +1,3 @@
+CREATE DATABASE guestbook;
+
+CREATE TABLE guestbook.entries (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, entry VARCHAR(500));
