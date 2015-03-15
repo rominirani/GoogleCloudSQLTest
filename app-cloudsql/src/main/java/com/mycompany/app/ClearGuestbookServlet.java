@@ -19,6 +19,7 @@ Connection conn = null;
            String CLOUDSQL_IP     = System.getenv("CLOUDSQL_IP");
            String CLOUDSQL_USERID = System.getenv("CLOUDSQL_USERID");
            String CLOUDSQL_PWD    = System.getenv("CLOUDSQL_PWD");
+           Class.forName("com.mysql.jdbc.Driver");
            conn = DriverManager.getConnection("jdbc:mysql://" + CLOUDSQL_IP + ":3306/guestbook",CLOUDSQL_USERID, CLOUDSQL_PWD);
            String statement = "DELETE from entries";
            PreparedStatement stmt = conn.prepareStatement(statement);
